@@ -1,6 +1,6 @@
 {
   "name": "@mattkrick/sanitize-svg",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "a small script to remove script tags from SVGs",
   "keywords": [
     "SVG",
@@ -8,7 +8,7 @@
     "purify",
     "xss"
   ],
-  "main": "dist/sanitizeSVG.js",
+  "main": "dist/lib/sanitizeSVG.js",
   "typings": "dist/types/sanitizeSVG.d.ts",
   "files": [
     "dist"

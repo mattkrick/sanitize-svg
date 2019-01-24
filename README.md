@@ -54,8 +54,13 @@ import JSDOM from 'jsdom'
 import sanitizeSVG from '@mattkrick/sanitize-svg'
 
 const {window} = new JSDOM()
-const imageBuffer = Buffer.from(...)
-const cleanImage = await sanitizeSVG(imageBuffer, window)
+const imageName = 'foo.svg'
+const imageBuffer = await fetch(imageName).then(r => r.buffer())
+// Buffers don't contain type info, so you should check that on your own
+if (imageName.endsWith('.svg')) {
+  const cleanImage = await sanitizeSVG(imageBuffer, window)  
+}
+
 ```
 
 ## License
