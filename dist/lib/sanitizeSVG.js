@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const getWindow = () => typeof window === 'undefined' ? null : window;
 const readAsText = (svg) => new Promise((resolve) => {
     if (!isFile(svg)) {
@@ -29,5 +30,5 @@ const sanitizeSVG = async (svg, window = getWindow()) => {
     const scripts = svgEl.getElementsByTagName('script');
     return (scripts.length === 0) ? svg : null;
 };
-module.exports = sanitizeSVG;
+exports.default = sanitizeSVG;
 //# sourceMappingURL=sanitizeSVG.js.map

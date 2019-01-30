@@ -1,1 +1,1 @@
-{"version":3,"file":"sanitizeSVG.d.ts","sourceRoot":"","sources":["../../src/sanitizeSVG.ts"],"names":[],"mappings":";AAAA,QAAA,MAAM,SAAS,qBAAsD,CAAA;AACrE,QAAA,MAAM,UAAU,gDAUd,CAAA;AAEF,QAAA,MAAM,MAAM,qCAEX,CAAA;AAED,QAAA,MAAM,WAAW,+EAUhB,CAAA"}
+{"version":3,"file":"sanitizeSVG.d.ts","sourceRoot":"","sources":["../../src/sanitizeSVG.ts"],"names":[],"mappings":";AAiBA,QAAA,MAAM,WAAW,+EAUhB,CAAA;AAED,eAAe,WAAW,CAAA"}

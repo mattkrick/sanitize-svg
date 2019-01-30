@@ -27,4 +27,4 @@ const sanitizeSVG = async (svg: File | Buffer, window = getWindow()) => {
   return (scripts.length === 0) ? svg : null
 }
 
-module.exports = sanitizeSVG
+export default sanitizeSVG

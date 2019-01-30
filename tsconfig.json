@@ -8,7 +8,7 @@
     "importHelpers": false,
     "jsx": "react",
     "lib": ["es2017", "dom"],
-    "module":"es2015",
+    "module":"commonjs",
     "moduleResolution": "node",
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
