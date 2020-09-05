@@ -1,1 +1,1 @@
-{"version":3,"file":"sanitizeSVG.d.ts","sourceRoot":"","sources":["../../src/sanitizeSVG.ts"],"names":[],"mappings":";AAiBA,QAAA,MAAM,WAAW,+EAUhB,CAAA;AAED,eAAe,WAAW,CAAA"}
+{"version":3,"file":"sanitizeSVG.d.ts","sourceRoot":"","sources":["../../src/sanitizeSVG.ts"],"names":[],"mappings":";AAkBA,QAAA,MAAM,WAAW,QAAe,IAAI,GAAG,MAAM,gFAc5C,CAAA;AAED,eAAe,WAAW,CAAA"}
