@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const getWindow = () => typeof window === 'undefined' ? null : window;
+const getWindow = () => (typeof window === 'undefined' ? null : window);
 const readAsText = (svg) => new Promise((resolve) => {
     if (!isFile(svg)) {
         resolve(svg.toString('utf-8'));
@@ -30,7 +30,7 @@ const sanitizeSVG = async (svg, window = getWindow()) => {
     const attributes = Array.from(svgEl.attributes);
     const hasScriptAttr = !!attributes.find((attr) => attr.startsWith('on'));
     const scripts = svgEl.getElementsByTagName('script');
-    return (scripts.length === 0 && !hasScriptAttr) ? svg : null;
+    return scripts.length === 0 && !hasScriptAttr ? svg : null;
 };
 exports.default = sanitizeSVG;
 //# sourceMappingURL=sanitizeSVG.js.map
