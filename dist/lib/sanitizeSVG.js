@@ -27,8 +27,10 @@ const sanitizeSVG = async (svg, window = getWindow()) => {
     const div = window.document.createElement('div');
     div.innerHTML = svgText;
     const svgEl = div.firstElementChild;
+    const attributes = Array.from(svgEl.attributes);
+    const hasScriptAttr = !!attributes.find((attr) => attr.startsWith('on'));
     const scripts = svgEl.getElementsByTagName('script');
-    return (scripts.length === 0) ? svg : null;
+    return (scripts.length === 0 && !hasScriptAttr) ? svg : null;
 };
 exports.default = sanitizeSVG;
 //# sourceMappingURL=sanitizeSVG.js.map
