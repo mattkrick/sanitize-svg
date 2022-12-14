@@ -21,9 +21,9 @@ const sanitizeSVG = async (svg: File | Buffer, window = getWindow()) => {
   if (isFile(svg) && svg.type !== 'image/svg+xml') return svg
   const svgText = await readAsText(svg)
   if (!svgText) throw new Error('Image corrupt')
-  const div = window.document.createElement('div')
-  div.innerHTML = svgText
-  const svgEl = div.firstElementChild!
+  const playground = window.document.createElement('template')
+  playground.innerHTML = svgText
+  const svgEl = playground.firstElementChild!
   const attributes = Array.from(svgEl.attributes).map(({ name }) => name)
   const hasScriptAttr = !!attributes.find((attr) => attr.startsWith('on'))
   const scripts = svgEl.getElementsByTagName('script')
