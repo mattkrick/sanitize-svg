@@ -1,3 +1,32 @@
+// List of disallowed SVG elements
+// Adjusted from https://github.com/cure53/DOMPurify/blob/f6fcdb9f1c13b3559697db0038744a0a327d46ab/src/tags.js#L201
+const svgDisallowed = [
+  'a',
+  'animate',
+  'color-profile',
+  'cursor',
+  'discard',
+  'fedropshadow',
+  'font-face',
+  'font-face-format',
+  'font-face-name',
+  'font-face-src',
+  'font-face-uri',
+  'foreignobject',
+  'hatch',
+  'hatchpath',
+  'mesh',
+  'meshgradient',
+  'meshpatch',
+  'meshrow',
+  'missing-glyph',
+  'script',
+  'set',
+  'solidcolor',
+  'unknown',
+  'use',
+]
+
 const getWindow = () => (typeof window === 'undefined' ? null : window)
 const readAsText = (svg: File | Buffer) =>
   new Promise<string | null>((resolve) => {
@@ -26,8 +55,8 @@ const sanitizeSVG = async (svg: File | Buffer, window = getWindow()) => {
   const svgEl = playground.firstElementChild!
   const attributes = Array.from(svgEl.attributes).map(({ name }) => name)
   const hasScriptAttr = !!attributes.find((attr) => attr.startsWith('on'))
-  const scripts = svgEl.getElementsByTagName('script')
-  return scripts.length === 0 && !hasScriptAttr ? svg : null
+  const disallowedSvgElements = svgEl.querySelectorAll(svgDisallowed.join(','))
+  return disallowedSvgElements.length === 0 && !hasScriptAttr ? svg : null
 }
 
 export default sanitizeSVG
