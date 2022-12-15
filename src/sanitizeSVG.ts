@@ -24,7 +24,7 @@ const svgDisallowed = [
   'set',
   'solidcolor',
   'unknown',
-  'use',
+  'use'
 ]
 
 const getWindow = () => (typeof window === 'undefined' ? null : window)
@@ -52,7 +52,7 @@ const sanitizeSVG = async (svg: File | Buffer, window = getWindow()) => {
   if (!svgText) throw new Error('Image corrupt')
   const playground = window.document.createElement('template')
   playground.innerHTML = svgText
-  const svgEl = playground.firstElementChild!
+  const svgEl = playground.content.firstElementChild!
   const attributes = Array.from(svgEl.attributes).map(({ name }) => name)
   const hasScriptAttr = !!attributes.find((attr) => attr.startsWith('on'))
   const disallowedSvgElements = svgEl.querySelectorAll(svgDisallowed.join(','))
