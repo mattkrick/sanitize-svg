@@ -24,7 +24,7 @@ const svgDisallowed = [
     'set',
     'solidcolor',
     'unknown',
-    'use',
+    'use'
 ];
 const getWindow = () => (typeof window === 'undefined' ? null : window);
 const readAsText = (svg) => new Promise((resolve) => {
